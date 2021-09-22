@@ -1,0 +1,16 @@
+<h1>Furry balls waiting for you!</h1>
+<mat-list>
+    <mat-list-item *ngFor="let kitten of allKitten">
+      <img matListAvatar src="{{ kitten.picture }}" alt="{{ kitten.name }}" />
+      <h3 matLine> Name: {{ kitten.name }} </h3>
+      <p matLine>
+        <span> Breed: {{ kitten.breed }} </span>
+      </p>
+      <p matLine>
+        <span> Birthday: {{ kitten.birthdate |date }} </span>
+      </p>
+      <mat-action-list>
+        <button mat-raised-button color="primary" (click)="adopt()"> Adopt! </button>
+      </mat-action-list>
+    </mat-list-item>
+  </mat-list>

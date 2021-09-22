@@ -1,0 +1,46 @@
+<div class="kitten-form-div">
+    <form class="create-kitten-form" (ngSubmit)="addKitten(kitten)">
+        <table class="create-kitten-tab">
+            <tr>
+                <td>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Cat Name</mat-label>
+                        <input matInput [(ngModel)]="kitten.name" id="kitten-name" name="kitten-name">
+                    </mat-form-field>  
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Cat Breed</mat-label>
+                        <mat-select [(ngModel)]="kitten.breed" id="kitten-breed" name="kitten-breed">
+                            <ng-container *ngFor="let breed of catBreedList | keyvalue">
+                                <mat-option value="{{breed.value}}">{{ breed.value }}</mat-option>
+                            </ng-container>        
+                        </mat-select>
+                    </mat-form-field>  
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Cat birthdate</mat-label>
+                        <input matInput [matDatepicker]="birthpicker" [(ngModel)]="kitten.birthdate" id="kitten-birthdate" name="kitten-birthdate">
+                        <mat-datepicker-toggle matSuffix [for]="birthpicker"></mat-datepicker-toggle>
+                        <mat-datepicker #birthpicker></mat-datepicker>
+                    </mat-form-field>  
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Cat Picture Url</mat-label>
+                        <input matInput [(ngModel)]="kitten.picture" id="kitten-picture" name="kitten-picture">
+                    </mat-form-field>  
+                </td>
+            </tr>
+        </table>
+        <button mat-raised-button color="primary" type="submit">Submit</button>
+        <button mat-raised-button type="reset">Reset</button>
+    </form>
+</div>

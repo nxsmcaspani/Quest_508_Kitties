@@ -1,0 +1,20 @@
+.kitten-form-div {
+    margin: 2% 0 0 2%;
+    display: flex;
+    justify-content: left;
+    align-items: stretch;
+    flex-direction: column;
+}
+
+.create-kitten-tab {
+    width: 500px;
+}
+
+mat-form-field {
+    width: 100%;
+  }
+
+button {
+    border-radius: 5px;
+    margin-left: 10px;
+}
